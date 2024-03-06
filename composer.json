@@ -11,6 +11,12 @@
             "homepage" : "https://github.com/jamiehannaford"
         }
     ],
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/AdamMerrifield/guzzle3.git"
+      }
+    ],
     "autoload": {
         "psr-0": {
             "OpenCloud": ["lib/"]
@@ -23,14 +29,13 @@
     },
     "require": {
         "php" : ">=5.4",
-        "guzzle/guzzle" : "~3.8",
+        "guzzle/guzzle" : "dev-php83#v3.10.0",
         "psr/log": "~1.0",
         "mikemccabe/json-patch-php": "~0.1"
     },
     "require-dev" : {
         "phpunit/phpunit": "4.3.*",
         "phpspec/prophecy": "~1.4",
-        "satooshi/php-coveralls": "0.6.1",
         "jakub-onderka/php-parallel-lint": "0.*",
         "fabpot/php-cs-fixer": "1.0.*@dev",
         "apigen/apigen": "~4.0"
