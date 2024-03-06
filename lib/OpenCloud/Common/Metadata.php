@@ -107,7 +107,7 @@ class Metadata extends Base implements \Countable
         return $this->metadata;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->metadata);
     }
