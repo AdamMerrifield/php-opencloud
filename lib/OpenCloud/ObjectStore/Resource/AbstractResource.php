@@ -41,6 +41,8 @@ abstract class AbstractResource extends Base
     /** @var Service The service object. */
     protected $service;
 
+    public $name;
+
     public function __construct(ServiceInterface $service)
     {
         $this->service = $service;

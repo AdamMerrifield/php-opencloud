@@ -19,7 +19,11 @@ namespace OpenCloud\ObjectStore\Exception;
 
 class ObjectNotFoundException extends \RuntimeException
 {
-    public static function factory($name, \Exception $exception)
+    public $name;
+    public $response;
+    public $request;
+
+    public static function factory($name, \Guzzle\Http\Exception\BadResponseException $exception)
     {
         $message = sprintf(
             "%s could not be found. The API returned this HTTP response:\n\n%s",
