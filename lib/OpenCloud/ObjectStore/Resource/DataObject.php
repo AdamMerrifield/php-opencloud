@@ -45,7 +45,7 @@ class DataObject extends AbstractResource
     /**
      * @var The file name of the object
      */
-    protected $name;
+    public $name;
 
     /**
      * @var EntityBody
@@ -77,7 +77,7 @@ class DataObject extends AbstractResource
      * @var string Etag.
      */
     protected $etag;
-    
+
     /**
      * @var string Manifest. Can be null so we use false to mean unset.
      */
@@ -301,7 +301,7 @@ class DataObject extends AbstractResource
     {
         return $this->etag ? : $this->content->getContentMd5();
     }
-    
+
     /**
      * @param string $manifest Path (`container/object') to set as the value to X-Object-Manifest
      * @return $this
@@ -383,7 +383,7 @@ class DataObject extends AbstractResource
     {
         return $this->getService()->getClient()->delete($this->getUrl())->send();
     }
-    
+
     /**
      * Create a symlink to another named object from this object. Requires this object to be empty.
      *
@@ -548,7 +548,7 @@ class DataObject extends AbstractResource
 
         return preg_match($pattern, $header);
     }
-    
+
     /**
      * @return null|string
      */
@@ -558,11 +558,11 @@ class DataObject extends AbstractResource
             ->getClient()
             ->head($this->getUrl())
             ->send();
-            
+
         $manifest = $response->getHeader(HeaderConst::X_OBJECT_MANIFEST);
-        
+
         $this->setManifest($manifest);
-        
+
         return $manifest;
     }
 }
